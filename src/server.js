@@ -27,6 +27,8 @@ app.use(logger); //logger for show route information
 //decalare routes here
 app.use("/api/test", Test);
 
+app.use("/api/registration",);
+
 //unknown error handler(route not found)
 app.use(Notfound);
 
