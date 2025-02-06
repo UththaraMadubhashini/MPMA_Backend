@@ -9,6 +9,7 @@ export const __filename = fileURLToPath(import.meta.url);
 export const __dirname = path.dirname(__filename);
 import Test from "./routes/Test.js";
 import Notfound from "./middleware/notfound.js";
+import Student from "./routes/Students.js";
 const app = express();
 const port = process.env.PORT;
 
@@ -27,7 +28,7 @@ app.use(logger); //logger for show route information
 //decalare routes here
 app.use("/api/test", Test);
 
-app.use("/api/registration",);
+app.use("/api/students", Student);
 
 //unknown error handler(route not found)
 app.use(Notfound);

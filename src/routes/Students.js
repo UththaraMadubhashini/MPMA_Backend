@@ -1,8 +1,14 @@
 import { Router } from "express";
-import { registerStudent } from "../Controllers/StudentController";
+import { registerStudent } from "../Controllers/StudentController.js";
+import multer from "multer";
+const upload = multer({ dest: "uploads/" });
 
 const router = Router();
 
-router.post("/students", registerStudent);
+router.post(
+  "",
+  upload.fields([{ name: "nic" }, { name: "photo" }, { name: "passport" }]),
+  registerStudent
+);
 
 export default router;
